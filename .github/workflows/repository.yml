@@ -20,3 +20,67 @@ jobs:
           persist-credentials: false
       - name: Verify repository foundation
         run: python3 scripts/check_repository.py
+
+  rust:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install native development dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libwebkit2gtk-4.1-dev libssl-dev libayatana-appindicator3-dev libxdo-dev libdbus-1-dev librsvg2-dev patchelf
+      - name: Install pinned Rust
+        run: rustup toolchain install 1.90.0 --profile minimal --component rustfmt --component clippy
+      - name: Rust tests
+        run: cargo test --workspace --locked
+      - name: Generated TypeScript contracts
+        run: cargo run --locked -p eros-core --bin contracts -- --check
+      - name: Build native controlled smoke executable
+        run: cargo build --locked -p eros-desktop
+      - name: Controlled PTY, IPC and activity smoke (CLI doubles)
+        run: python3 scripts/check_chat_activity.py
+
+  frontend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: apps/desktop
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Controlled browser smokes (synthetic desktop bridge)
+        shell: bash
+        run: |
+          node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 1422 --strictPort &
+          preview_pid=$!
+          trap 'kill "$preview_pid" 2>/dev/null || true; wait "$preview_pid" 2>/dev/null || true' EXIT
+          ready=false
+          for attempt in {1..30}; do
+            if ! kill -0 "$preview_pid" 2>/dev/null; then
+              echo "Preview exited before becoming ready" >&2
+              exit 1
+            fi
+            if curl --fail --silent http://127.0.0.1:1422/ > /dev/null; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" != true ]; then
+            echo "Preview did not become ready on port 1422" >&2
+            exit 1
+          fi
+          npm run test:ui
+          npm run test:activity

@@ -1,0 +1,2230 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "commit": "8cdb0172a2962e173fd367740e05d38f6a2f9cbc",
+    "changes": [
+      "M .github/workflows/repository.yml",
+      " M AGENTS.md",
+      " M CONTRIBUTING.md",
+      " M README.md",
+      " M README.pt-BR.md",
+      " M ROADMAP.md",
+      " M apps/desktop/package-lock.json",
+      " M apps/desktop/package.json",
+      " M apps/desktop/src-tauri/src/lib.rs",
+      " M apps/desktop/src/App.svelte",
+      " M apps/desktop/src/lib/TerminalPane.svelte",
+      " M apps/desktop/src/main.ts",
+      " M docs/architecture.md",
+      " M docs/frontend-verification.md",
+      "?? .nvmrc",
+      "?? apps/desktop/.npmrc",
+      "?? apps/desktop/src/lib/benchmark.ts",
+      "?? docs/development.md",
+      "?? docs/planning/",
+      "?? scripts/performance/"
+    ],
+    "diff_sha256": "70615ff528f2b185634745be1aad7feee32742236daf26c0c3b52d6c3333d511",
+    "binary_sha256": "5feb0941a3bee791f8b6e1edaca1f93fca824d4b382ca21bc436a3407e5e86bf",
+    "os": {
+      "NAME": "Ubuntu",
+      "ID": "ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "VERSION_ID": "26.04",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "resolute",
+      "LOGO": "ubuntu-logo"
+    },
+    "kernel": "7.0.0-38-generic",
+    "architecture": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+    "logical_cpus": 24,
+    "memory": "MemTotal:       32024312 kB",
+    "versions": {
+      "rustc": null,
+      "cargo": null,
+      "node": "v22.22.1",
+      "npm": "9.2.0",
+      "webkitgtk": "2.52.6",
+      "python": "Python 3.14.4"
+    },
+    "frontend_packages": {
+      "@tauri-apps/cli": "2.12.2",
+      "@tauri-apps/api": "2.12.3",
+      "@xterm/xterm": "6.0.0",
+      "svelte": "5.57.2",
+      "vite": "8.3.4"
+    },
+    "build": "direct release executable, opt-in VITE_EROS_BENCHMARK=1; not installed package",
+    "configuration": {
+      "binary": "<repo>/target/release/eros-desktop",
+      "output": "/tmp/eros002-review-triage.json",
+      "compare": null,
+      "workloads": "W0",
+      "idle_seconds": 5,
+      "pressure_seconds": 1,
+      "cycles": 1,
+      "cold_samples": 1,
+      "warm_samples": 1
+    },
+    "clock_offset_ms_before": 1792007360986.0134,
+    "source_sha256": {
+      "scripts/performance/run.py": "c71a6a39b6ee36b73a2de3ed12acda7900c360dbbd85bfc8097a566e9cdf3835",
+      "scripts/performance/test_performance.py": "8080ce2809445f9b77ec9640eb9635392a74040a208b08c8d195f2113511dd96",
+      "scripts/performance/fixture.py": "319bcf81110b6fc3589bcf03f1f68c4341f1ff7c4a61ff51aa5313a7ff1fd82a",
+      "scripts/performance/metrics.py": "665b8aa1a293fbd89047a9c22f00f777fe6efa2aa7bdf075a1ffd8b86922bd3e",
+      "scripts/performance/failures.py": "7111feb3d2a82996940adb7445c72d3dc0773b07b732a54f144e49f2c8d155b4",
+      "scripts/performance/producer.py": "4aae50ec51073ac700c834b72d9d6c241631c2ebdb8ea1f9547388c283e589bb",
+      "apps/desktop/src/lib/benchmark.ts": "560ca16f18ae0de969ca4e361239bf788ff23f6a064bd60fd52870e35366fac1",
+      "apps/desktop/src/App.svelte": "5ea4b6faee7a046eaeb7d782a6d4d3c6a3f3ed96f3cc30684ede4c4bdfc51dd0",
+      "apps/desktop/src/lib/TerminalPane.svelte": "4b70652a4fae42c656f2733cb8be66aeedede92ecb6ddf70d6da275e4b327610",
+      "apps/desktop/src/main.ts": "42e03123ef455c9b7f23fcb9de91c4f5427a07f10f857db32a125c146d92ec63",
+      "apps/desktop/src-tauri/src/lib.rs": "3b24d74112c1f3d5368da38521b5879d69c20cf820fdd55cf9306bd53dc5e8bb"
+    },
+    "clock_offset_ms_after": 1792007360986.013
+  },
+  "workloads": [
+    {
+      "scenario": "W0",
+      "status": "complete",
+      "startupEmpty": {
+        "coldMs": [
+          1156.965087890625
+        ],
+        "warmMs": [
+          576.218994140625
+        ]
+      },
+      "startup100Projects": {
+        "coldMs": [
+          634.744384765625
+        ],
+        "warmMs": [
+          606.454833984375
+        ]
+      },
+      "ui": {
+        "deliveredPtyBytes": 33,
+        "peakXtermQueuedBytes": 33,
+        "phase": "done",
+        "readyEpochMs": 1792088506542,
+        "scenario": "W0",
+        "status": "complete"
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": 292464,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null
+      },
+      "duration_s": 41.6843319079926,
+      "samples": [
+        {
+          "at_monotonic_s": 81139.402990335,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 11719,
+              "rss_kib": 39616,
+              "fds": 8,
+              "threads": 1
+            },
+            "ui_webkit": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 13599,
+              "rss_kib": 44920,
+              "fds": 13,
+              "threads": 7
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 14643,
+              "rss_kib": 25616,
+              "fds": 5,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81140.42420204,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11231,
+              "rss_kib": 39616,
+              "fds": 8,
+              "threads": 1
+            },
+            "ui_webkit": {
+              "processes": 7,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9584577715038365,
+              "pss_kib": 14651,
+              "rss_kib": 25648,
+              "fds": 5,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81141.452021074,
+          "phase": "ready",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11102,
+              "rss_kib": 39616,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 43.782026321046395,
+              "pss_kib": 281362,
+              "rss_kib": 618120,
+              "fds": 156,
+              "threads": 107
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9188017547364256,
+              "pss_kib": 14657,
+              "rss_kib": 25652,
+              "fds": 5,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81141.531199974,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11636,
+              "rss_kib": 39616,
+              "fds": 8,
+              "threads": 1
+            },
+            "ui_webkit": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 15583,
+              "rss_kib": 50524,
+              "fds": 13,
+              "threads": 7
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 50.51850935528465,
+              "pss_kib": 14687,
+              "rss_kib": 25668,
+              "fds": 5,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81142.553163834,
+          "phase": "ready",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11070,
+              "rss_kib": 39620,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": null,
+              "pss_kib": 216143,
+              "rss_kib": 543436,
+              "fds": 152,
+              "threads": 107
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9355245497333127,
+              "pss_kib": 14690,
+              "rss_kib": 25688,
+              "fds": 5,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81142.724295274,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 11832,
+              "rss_kib": 39640,
+              "fds": 8,
+              "threads": 1
+            },
+            "ui_webkit": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 16097,
+              "rss_kib": 51000,
+              "fds": 13,
+              "threads": 7
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 46.747692884002646,
+              "pss_kib": 14852,
+              "rss_kib": 26260,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81143.746268746,
+          "phase": "ready",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11283,
+              "rss_kib": 39640,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": null,
+              "pss_kib": 252610,
+              "rss_kib": 580368,
+              "fds": 154,
+              "threads": 107
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9354969401752657,
+              "pss_kib": 14832,
+              "rss_kib": 26264,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81143.859624615,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11825,
+              "rss_kib": 39640,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 15097,
+              "rss_kib": 50080,
+              "fds": 13,
+              "threads": 7
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 44.108876271834724,
+              "pss_kib": 14868,
+              "rss_kib": 26268,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81144.882094141,
+          "phase": "ready",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11242,
+              "rss_kib": 39648,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": null,
+              "pss_kib": 250851,
+              "rss_kib": 578912,
+              "fds": 155,
+              "threads": 107
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9560485169965183,
+              "pss_kib": 14838,
+              "rss_kib": 26268,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81144.962322014,
+          "phase": "startup",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11883,
+              "rss_kib": 39648,
+              "fds": 9,
+              "threads": 2
+            },
+            "ui_webkit": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 14850,
+              "rss_kib": 48960,
+              "fds": 14,
+              "threads": 7
+            },
+            "controlled": {
+              "processes": 0,
+              "cpu_percent": null,
+              "pss_kib": null,
+              "rss_kib": null,
+              "fds": null,
+              "threads": null
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 62.322479860291466,
+              "pss_kib": 14876,
+              "rss_kib": 26272,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81145.984667333,
+          "phase": "idle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 1.9562861616673533,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": null,
+              "pss_kib": 249590,
+              "rss_kib": 578016,
+              "fds": 155,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": null,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.956286161667355,
+              "pss_kib": 14837,
+              "rss_kib": 26272,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81147.013815425,
+          "phase": "idle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 17.490194210090046,
+              "pss_kib": 242562,
+              "rss_kib": 571096,
+              "fds": 154,
+              "threads": 111
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.915032368348343,
+              "pss_kib": 14837,
+              "rss_kib": 26272,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81148.04356002,
+          "phase": "idle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 3.8844583593148423,
+              "pss_kib": 241710,
+              "rss_kib": 570244,
+              "fds": 154,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.913343769486121,
+              "pss_kib": 14837,
+              "rss_kib": 26272,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81149.072400153,
+          "phase": "idle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 3.887873219255761,
+              "pss_kib": 241666,
+              "rss_kib": 570200,
+              "fds": 154,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9159049144418208,
+              "pss_kib": 14841,
+              "rss_kib": 26276,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81150.101860426,
+          "phase": "idle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 4.8569139879807866,
+              "pss_kib": 241634,
+              "rss_kib": 570168,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.914148392788475,
+              "pss_kib": 14841,
+              "rss_kib": 26276,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81151.13087375,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9718047149496596,
+              "pss_kib": 241653,
+              "rss_kib": 570244,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9154141448489783,
+              "pss_kib": 14841,
+              "rss_kib": 26276,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81152.160272072,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9714412571157724,
+              "pss_kib": 241653,
+              "rss_kib": 570244,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.914323771347339,
+              "pss_kib": 14841,
+              "rss_kib": 26276,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81153.190301209,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11647,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 241653,
+              "rss_kib": 570244,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9125389682813356,
+              "pss_kib": 14845,
+              "rss_kib": 26280,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81154.219618063,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 244343,
+              "rss_kib": 570244,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9145544332241724,
+              "pss_kib": 14846,
+              "rss_kib": 26280,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81155.248882321,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9715677895399719,
+              "pss_kib": 244343,
+              "rss_kib": 570244,
+              "fds": 160,
+              "threads": 109
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9147033686199157,
+              "pss_kib": 14846,
+              "rss_kib": 26280,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81156.278057005,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 242768,
+              "rss_kib": 569020,
+              "fds": 160,
+              "threads": 99
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9149570492327896,
+              "pss_kib": 14846,
+              "rss_kib": 26280,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81157.307252675,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9716325370771415,
+              "pss_kib": 237088,
+              "rss_kib": 563340,
+              "fds": 160,
+              "threads": 98
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.943265074154283,
+              "pss_kib": 14846,
+              "rss_kib": 26280,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81158.337074873,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 237088,
+              "rss_kib": 563340,
+              "fds": 160,
+              "threads": 98
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9131242323723128,
+              "pss_kib": 14850,
+              "rss_kib": 26284,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81159.365967628,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 237088,
+              "rss_kib": 563340,
+              "fds": 160,
+              "threads": 98
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.915755782537909,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81160.395204046,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 237088,
+              "rss_kib": 563340,
+              "fds": 160,
+              "threads": 98
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 3.886376278590918,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81161.423953155,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236832,
+              "rss_kib": 563084,
+              "fds": 160,
+              "threads": 93
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9441086096756048,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81162.453244146,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236832,
+              "rss_kib": 563084,
+              "fds": 160,
+              "threads": 93
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.914627667214266,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81163.482375039,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9716936949412404,
+              "pss_kib": 236832,
+              "rss_kib": 563084,
+              "fds": 160,
+              "threads": 93
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.915081084823721,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81164.511531723,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236832,
+              "rss_kib": 563084,
+              "fds": 160,
+              "threads": 93
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9150080319893283,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81165.540666504,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236832,
+              "rss_kib": 563084,
+              "fds": 160,
+              "threads": 93
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9150700718212676,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81166.569589552,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9718899794753244,
+              "pss_kib": 236808,
+              "rss_kib": 563060,
+              "fds": 160,
+              "threads": 92
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9156699384259728,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81167.599159382,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.942558864602266,
+              "pss_kib": 14866,
+              "rss_kib": 26300,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81168.628613782,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 3.8855533572272782,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81169.657981283,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9429406874127924,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81170.687401022,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 3.885684185416724,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81171.716229138,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9719796576898593,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9439593153797186,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81172.74512883,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9157361240230695,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81173.773975393,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9158866909118473,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81174.802858723,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.0,
+              "pss_kib": 236744,
+              "rss_kib": 562996,
+              "fds": 160,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.915782492072949,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81175.831699845,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11652,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 6,
+              "cpu_percent": 0.9719673704783846,
+              "pss_kib": 236749,
+              "rss_kib": 563060,
+              "fds": 159,
+              "threads": 91
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1025,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 2.9159021114351322,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81176.860519696,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11658,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 3,
+              "cpu_percent": 0.9719874660589741,
+              "pss_kib": 228136,
+              "rss_kib": 541704,
+              "fds": 140,
+              "threads": 84
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1026,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9439749321179483,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81177.888917933,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11658,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 3,
+              "cpu_percent": 0.0,
+              "pss_kib": 228136,
+              "rss_kib": 541704,
+              "fds": 140,
+              "threads": 84
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1026,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 3.889543812969759,
+              "pss_kib": 14886,
+              "rss_kib": 26320,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81178.917874561,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11658,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 3,
+              "cpu_percent": 0.0,
+              "pss_kib": 228136,
+              "rss_kib": 541704,
+              "fds": 140,
+              "threads": 84
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1026,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9437165236916385,
+              "pss_kib": 14902,
+              "rss_kib": 26336,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81179.946323017,
+          "phase": "settle",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11658,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 3,
+              "cpu_percent": 0.0,
+              "pss_kib": 228136,
+              "rss_kib": 541704,
+              "fds": 140,
+              "threads": 84
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1026,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 3.8893538870898183,
+              "pss_kib": 14906,
+              "rss_kib": 26340,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        },
+        {
+          "at_monotonic_s": 81180.975508317,
+          "phase": "done",
+          "groups": {
+            "service": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 11658,
+              "rss_kib": 40136,
+              "fds": 13,
+              "threads": 4
+            },
+            "ui_webkit": {
+              "processes": 3,
+              "cpu_percent": 0.0,
+              "pss_kib": 226892,
+              "rss_kib": 540460,
+              "fds": 140,
+              "threads": 87
+            },
+            "controlled": {
+              "processes": 1,
+              "cpu_percent": 0.0,
+              "pss_kib": 1026,
+              "rss_kib": 4564,
+              "fds": 4,
+              "threads": 1
+            },
+            "monitor": {
+              "processes": 1,
+              "cpu_percent": 1.9432846543596756,
+              "pss_kib": 14906,
+              "rss_kib": 26340,
+              "fds": 8,
+              "threads": 1
+            }
+          }
+        }
+      ],
+      "samplingOverhead": {
+        "cpu_s": 0.7915675979999998,
+        "wall_s": 0.791795085038757,
+        "calls": 45,
+        "cpu_percent_one_core": 1.898957142331514
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 41
+      }
+    }
+  ],
+  "status": "complete",
+  "monitorCalibration": {
+    "duration_s": 5.053720790994703,
+    "sampling_cpu_s": 0.05313659,
+    "sampling_wall_s": 0.05315940901346039,
+    "samples": [
+      {
+        "at_monotonic_s": 81134.245612071,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": null,
+            "pss_kib": 14579,
+            "rss_kib": 25488,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 81135.25637186,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.9893547516244976,
+            "pss_kib": 14591,
+            "rss_kib": 25500,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 81136.267217531,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.9892706955061794,
+            "pss_kib": 14595,
+            "rss_kib": 25504,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 81137.277809226,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.9895193132396766,
+            "pss_kib": 14599,
+            "rss_kib": 25508,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 81138.288785869,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.9891425355155306,
+            "pss_kib": 14599,
+            "rss_kib": 25508,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      }
+    ]
+  },
+  "summary": {
+    "W0.startupEmpty.coldMs": {
+      "n": 1,
+      "min": 1156.965087890625,
+      "median": 1156.965087890625,
+      "p95": 1156.965087890625,
+      "max": 1156.965087890625
+    },
+    "W0.startupEmpty.warmMs": {
+      "n": 1,
+      "min": 576.218994140625,
+      "median": 576.218994140625,
+      "p95": 576.218994140625,
+      "max": 576.218994140625
+    },
+    "W0.startup100Projects.coldMs": {
+      "n": 1,
+      "min": 634.744384765625,
+      "median": 634.744384765625,
+      "p95": 634.744384765625,
+      "max": 634.744384765625
+    },
+    "W0.startup100Projects.warmMs": {
+      "n": 1,
+      "min": 606.454833984375,
+      "median": 606.454833984375,
+      "p95": 606.454833984375,
+      "max": 606.454833984375
+    },
+    "W0.service.cpu_percent": {
+      "n": 43,
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 1.9562861616673533
+    },
+    "W0.service.pss_kib": {
+      "n": 45,
+      "min": 11070,
+      "median": 11652.0,
+      "p95": 11825,
+      "max": 11883
+    },
+    "W0.service.rss_kib": {
+      "n": 45,
+      "min": 39616,
+      "median": 40136.0,
+      "p95": 40136,
+      "max": 40136
+    },
+    "W0.service.fds": {
+      "n": 45,
+      "min": 8,
+      "median": 13.0,
+      "p95": 13,
+      "max": 13
+    },
+    "W0.service.threads": {
+      "n": 45,
+      "min": 1,
+      "median": 4.0,
+      "p95": 4,
+      "max": 4
+    },
+    "W0.ui_webkit.cpu_percent": {
+      "n": 35,
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 17.490194210090046,
+      "max": 43.782026321046395
+    },
+    "W0.ui_webkit.pss_kib": {
+      "n": 44,
+      "min": 13599,
+      "median": 236832.0,
+      "p95": 250851,
+      "max": 281362
+    },
+    "W0.ui_webkit.rss_kib": {
+      "n": 44,
+      "min": 44920,
+      "median": 563084.0,
+      "p95": 578912,
+      "max": 618120
+    },
+    "W0.ui_webkit.fds": {
+      "n": 44,
+      "min": 13,
+      "median": 160.0,
+      "p95": 160,
+      "max": 160
+    },
+    "W0.ui_webkit.threads": {
+      "n": 44,
+      "min": 7,
+      "median": 93.0,
+      "p95": 109,
+      "max": 111
+    },
+    "W0.controlled.cpu_percent": {
+      "n": 34,
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "W0.controlled.pss_kib": {
+      "n": 35,
+      "min": 1025,
+      "median": 1025.0,
+      "p95": 1026,
+      "max": 1026
+    },
+    "W0.controlled.rss_kib": {
+      "n": 35,
+      "min": 4564,
+      "median": 4564.0,
+      "p95": 4564,
+      "max": 4564
+    },
+    "W0.controlled.fds": {
+      "n": 35,
+      "min": 4,
+      "median": 4.0,
+      "p95": 4,
+      "max": 4
+    },
+    "W0.controlled.threads": {
+      "n": 35,
+      "min": 1,
+      "median": 1.0,
+      "p95": 1,
+      "max": 1
+    },
+    "W0.monitor.cpu_percent": {
+      "n": 44,
+      "min": 1.942558864602266,
+      "median": 2.9150512200848055,
+      "p95": 46.747692884002646,
+      "max": 62.322479860291466
+    },
+    "W0.monitor.pss_kib": {
+      "n": 45,
+      "min": 14643,
+      "median": 14866.0,
+      "p95": 14902,
+      "max": 14906
+    },
+    "W0.monitor.rss_kib": {
+      "n": 45,
+      "min": 25616,
+      "median": 26284.0,
+      "p95": 26336,
+      "max": 26340
+    },
+    "W0.monitor.fds": {
+      "n": 45,
+      "min": 5,
+      "median": 8.0,
+      "p95": 8,
+      "max": 8
+    },
+    "W0.monitor.threads": {
+      "n": 45,
+      "min": 1,
+      "median": 1.0,
+      "p95": 1,
+      "max": 1
+    }
+  },
+  "review_context": {
+    "kind": "short native triage, not baseline",
+    "sandbox": "authorized execution outside sandbox",
+    "personal_paths": "repository prefix redacted; synthetic fixtures only"
+  }
+}

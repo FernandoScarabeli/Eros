@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { MarkerObserver, registerProbe, removeProbe } from './benchmark-probe';
+  import type { Probe } from './benchmark-probe';
   import LucideIcon from './LucideIcon.svelte';
   import { listen } from '@tauri-apps/api/event';
   import { FitAddon } from '@xterm/addon-fit';
@@ -40,6 +42,14 @@
   }: Props = $props();
 
   let terminalElement: HTMLDivElement;
+  let mountedProbe: Probe | undefined;
+  $effect(() => {
+    const currentSession = conversation.id;
+    const currentPanel = panel.id;
+    if (mountedProbe && (mountedProbe.id !== currentSession || mountedProbe.panelId !== currentPanel)) {
+      mountedProbe.bindingMismatch = { session: currentSession, panel: currentPanel };
+    }
+  });
   function statusLabel(state: SessionState) {
     switch (state) {
       case 'running': return 'Em execução';
@@ -56,7 +66,7 @@
       .trim();
     const terminal = new Terminal({
       allowTransparency: false,
-      cursorBlink: true,
+      cursorBlink: window.__EROS_BENCHMARK__?.animations !== 'off',
       cursorStyle: 'bar',
       convertEol: false,
       fontFamily: '"SFMono-Regular", "Cascadia Code", Consolas, monospace',
@@ -91,6 +101,11 @@
     terminal.loadAddon(fit);
     terminal.open(terminalElement);
     terminal.focus();
+
+    const benchmark = window.__EROS_BENCHMARK__;
+    const probe: Probe | undefined = benchmark ? { id: conversation.id, panelId: panel.id, viewId: crypto.randomUUID(), delivered: 0, queued: 0, peakQueued: 0, observer: new MarkerObserver(), ready: false, scanWallMs: 0, callbackWallMs: 0, scannedChunks: 0 } : undefined;
+    mountedProbe = probe;
+    if (probe && benchmark) registerProbe(benchmark, probe);
 
     let cancelled = false;
     let unlisten: (() => void) | undefined;
@@ -147,7 +162,23 @@
         try {
           unlisten = await listen<TerminalEvent>(`eros-terminal-${subscriptionId}`, ({ payload }) => {
             if (payload.type === 'output' && payload.conversation_id === conversation.id) {
-              terminal.write(decoder.decode(Uint8Array.from(payload.data), { stream: true }));
+              const decoded = decoder.decode(Uint8Array.from(payload.data), { stream: true });
+              if (probe) {
+                const size = payload.data.length;
+                probe.delivered += size;
+                probe.queued += size;
+                probe.peakQueued = Math.max(probe.peakQueued, probe.queued);
+                const scanStart = performance.now();
+                const acknowledge = benchmark?.detailed ? probe.observer.scan(decoded) : () => {};
+                probe.scanWallMs += performance.now() - scanStart;
+                probe.scannedChunks++;
+                terminal.write(decoded, () => {
+                  const callbackStart = performance.now();
+                  probe.queued -= size;
+                  if (benchmark?.detailed) requestAnimationFrame(() => requestAnimationFrame(acknowledge));
+                  probe.callbackWallMs += performance.now() - callbackStart;
+                });
+              } else terminal.write(decoded);
             } else if (payload.type === 'state' && payload.conversation_id === conversation.id) {
               onState(conversation.id, payload.state);
             } else if (payload.type === 'error') {
@@ -159,6 +190,7 @@
             return;
           }
           await subscribeTerminal(conversation.id, subscriptionId);
+          if (probe) probe.ready = true;
           if (cancelled) await unsubscribeTerminal(subscriptionId);
         } catch (error) {
           try {
@@ -182,6 +214,7 @@
 
     return () => {
       cancelled = true;
+      if (probe && benchmark) removeProbe(benchmark.probes, probe, benchmark.instances);
       observer.disconnect();
       cancelAnimationFrame(resizeFrame);
       if (resizeTimer) clearTimeout(resizeTimer);
@@ -197,6 +230,8 @@
   class:focused
   class:maximized
   class="terminal-pane"
+  data-benchmark-session={window.__EROS_BENCHMARK__ ? conversation.id : undefined}
+  data-benchmark-panel={window.__EROS_BENCHMARK__ ? panel.id : undefined}
   aria-label={`Terminal ${conversation.name}`}
   onfocusin={() => onFocus(panel.id)}
   onclick={() => onFocus(panel.id)}

@@ -3,6 +3,14 @@
 This is an implementation sequence, not a list of available features or promised
 release dates. The product is defined in [docs/product.md](docs/product.md).
 
+## Detailed implementation plan
+
+The [research-backed product and execution plan](docs/planning/README.md)
+documents the single-PC, local-first scope, performance targets and task-level
+acceptance criteria in Brazilian Portuguese. Use its [Kanban](docs/planning/KANBAN.md)
+and [agent execution guide](docs/planning/AGENT_GUIDE.md) when implementing an
+assigned task. Targets and planned cards are not claims of completed features.
+
 ## Repository foundation
 
 - [x] Preserve the old application and experiments in Git-ignored local archives.

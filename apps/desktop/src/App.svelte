@@ -1025,6 +1025,7 @@
 <div
   class:sidebar-collapsed={sidebarCollapsed}
   class="app-shell"
+  data-benchmark-ready={window.__EROS_BENCHMARK__ ? String(desktopReady && !loading && !busy) : undefined}
   inert={showProjectSettings || showRenameProject || showReorderDialog}
 >
   {#if !sidebarCollapsed}<button

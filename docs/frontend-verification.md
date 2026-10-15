@@ -30,6 +30,12 @@ Rust bridge retain their existing responsibilities.
   terminal control. Returning home also detaches the terminal views without
   stopping their processes.
 
+## Current verification entry point
+
+Use [development.md](development.md) for supported tools and the complete current
+check sequence, including both browser smokes and the native controlled smoke.
+The dated results below are historical evidence, not current acceptance claims.
+
 ## Reproduce verification
 
 With the project's supported Node.js installed:

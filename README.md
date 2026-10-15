@@ -51,18 +51,9 @@ python3 scripts/check_repository.py
 
 ### Local development
 
-The project requires Rust 1.90, a Node.js version compatible with Vite 8, and
-Tauri's Linux desktop dependencies, including WebKitGTK 4.1. See the
-[official Tauri prerequisites](https://v2.tauri.app/start/prerequisites/).
-
-```bash
-cd apps/desktop
-npm install
-npm run tauri -- dev
-```
-
-The Rust lockfile is included. Real CLI startup and reconnect behavior remain
-pending. Python is a repository-check tool, not an application dependency.
+Supported development/CI target: Ubuntu 24.04 LTS, Rust 1.90.0 and Node.js
+22.22.1. Follow [Development and verification](docs/development.md) for native
+dependencies, locked installation, commands and acceptance boundaries.
 
 Local archived material belongs in `legado/`. That directory is Git-ignored,
 is not distributed, and must not be required by a clean checkout.

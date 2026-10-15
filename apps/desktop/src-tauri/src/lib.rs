@@ -21,6 +21,10 @@ pub fn run() {
         .manage(AppState::default())
         .invoke_handler(tauri::generate_handler![
             snapshot,
+            benchmark_config,
+            benchmark_report,
+            benchmark_producers,
+            benchmark_window,
             subscribe_activity,
             mark_conversation_read,
             add_project,
@@ -403,4 +407,71 @@ mod connection_tests {
         assert!(error.contains("desatualizado"));
         assert!(check_service_protocol(&serde_json::json!({})).is_err());
     }
+}
+
+// No monitor or file writes unless explicitly launched by the synthetic harness.
+#[tauri::command]
+fn benchmark_config() -> Result<Option<serde_json::Value>, String> {
+    if std::env::var("EROS_BENCHMARK").as_deref() != Ok("1") {
+        return Ok(None);
+    }
+    let raw = std::env::var("EROS_BENCH_CONFIG").map_err(|_| "Missing benchmark configuration")?;
+    serde_json::from_str(&raw).map(Some).map_err(|_| "Invalid benchmark configuration".into())
+}
+
+#[tauri::command]
+fn benchmark_report(value: serde_json::Value) -> Result<(), String> {
+    if std::env::var("EROS_BENCHMARK").as_deref() != Ok("1") {
+        return Err("Benchmark is disabled".into());
+    }
+    let root = std::env::var("EROS_RUNTIME_DIR").map_err(|_| "Missing isolated runtime")?;
+    let data = serde_json::to_vec(&value).map_err(|_| "Invalid benchmark report")?;
+    if data.len() > 65536 {
+        return Err("Benchmark report exceeds 64 KiB".into());
+    }
+    let path = std::path::Path::new(&root).join("benchmark-ui.json");
+    let temporary = path.with_extension("tmp");
+    std::fs::write(&temporary, data).map_err(|_| "Cannot write benchmark report")?;
+    std::fs::rename(temporary, path).map_err(|_| "Cannot publish benchmark report".into())
+}
+
+
+#[tauri::command]
+fn benchmark_producers() -> Result<Vec<serde_json::Value>, String> {
+    if std::env::var("EROS_BENCHMARK").as_deref() != Ok("1") {
+        return Err("Benchmark is disabled".into());
+    }
+    let root = std::env::var("EROS_DATA_DIR").map_err(|_| "Missing isolated data")?;
+    let mut states = Vec::new();
+    for entry in std::fs::read_dir(root).map_err(|_| "Cannot read fixture counters")? {
+        let entry = entry.map_err(|_| "Cannot read fixture counter")?;
+        let name = entry.file_name();
+        let name = name.to_string_lossy();
+        if !name.starts_with("producer-") || !name.ends_with(".json") { continue; }
+        if states.len() >= 64 { return Err("Fixture counter budget exceeded".into()); }
+        let metadata = entry.metadata().map_err(|_| "Cannot inspect fixture counter")?;
+        if !metadata.is_file() || metadata.len() > 1024 { return Err("Invalid fixture counter".into()); }
+        let raw = std::fs::read(entry.path()).map_err(|_| "Cannot read fixture counter")?;
+        let value: serde_json::Value = serde_json::from_slice(&raw).map_err(|_| "Invalid fixture counter")?;
+        states.push(value);
+    }
+    Ok(states)
+}
+
+#[tauri::command]
+async fn benchmark_window(window: tauri::WebviewWindow, minimized: bool) -> Result<bool, String> {
+    if std::env::var("EROS_BENCHMARK").as_deref() != Ok("1") {
+        return Err("Benchmark is disabled".into());
+    }
+    tauri::async_runtime::spawn_blocking(move || -> Result<bool, String> {
+    if minimized { window.minimize() } else { window.unminimize() }
+        .map_err(|_| "Window manager refused benchmark state")?;
+    for _ in 0..20 {
+        if window.is_minimized().map_err(|_| "Cannot inspect native window state")? == minimized {
+            return Ok(minimized);
+        }
+        std::thread::sleep(Duration::from_millis(50));
+    }
+    Err("Native window state not confirmed within 1 second".into())
+    }).await.map_err(|_| "Benchmark window worker interrupted".to_string())?
 }

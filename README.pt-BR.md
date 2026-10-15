@@ -46,24 +46,9 @@ reabrir a janela com o workspace individual e a sessão mantida. Consulte:
 
 ### Desenvolvimento local
 
-O projeto exige Rust 1.90, Node.js compatível com Vite 8 e as dependências de
-desktop do Tauri para Linux, incluindo WebKitGTK 4.1. Consulte os
-[pré-requisitos oficiais do Tauri](https://v2.tauri.app/start/prerequisites/).
-
-```bash
-cd apps/desktop
-npm install
-npm run tauri -- dev
-```
-
-O lockfile Rust está incluído. A aceitação da inicialização real do CLI e da
-reconexão ainda está pendente.
-
-Para conferir a estrutura do repositório:
-
-```bash
-python3 scripts/check_repository.py
-```
+Alvo de desenvolvimento/CI: Ubuntu 24.04 LTS, Rust 1.90.0 e Node.js 22.22.1.
+Siga [Desenvolvimento e verificações](docs/development.md) para preparação do
+Ubuntu, instalação com lockfiles, comandos e limites de aceitação.
 
 `legado/` guarda o trabalho antigo apenas nesta máquina. A pasta é ignorada pelo
 Git e não pode ser dependência da aplicação nova.

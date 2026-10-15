@@ -36,7 +36,7 @@
 
     currentPhraseIndex = Math.floor(Math.random() * phrases.length);
     const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (motionPreference.matches) {
+    if (motionPreference.matches || window.__EROS_BENCHMARK__?.animations === 'off') {
       displayedText = phrases[currentPhraseIndex];
       return;
     }

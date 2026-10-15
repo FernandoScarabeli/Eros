@@ -1,0 +1,923 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "commit": "8cdb0172a2962e173fd367740e05d38f6a2f9cbc",
+    "changes": [
+      "M .github/workflows/repository.yml",
+      " M AGENTS.md",
+      " M CONTRIBUTING.md",
+      " M README.md",
+      " M README.pt-BR.md",
+      " M ROADMAP.md",
+      " M apps/desktop/package-lock.json",
+      " M apps/desktop/package.json",
+      " M apps/desktop/src-tauri/src/lib.rs",
+      " M apps/desktop/src/App.svelte",
+      " M apps/desktop/src/lib/TerminalPane.svelte",
+      " M apps/desktop/src/main.ts",
+      " M docs/architecture.md",
+      " M docs/frontend-verification.md",
+      "?? .nvmrc",
+      "?? apps/desktop/.npmrc",
+      "?? apps/desktop/src/lib/benchmark.ts",
+      "?? docs/development.md",
+      "?? docs/planning/",
+      "?? scripts/performance/"
+    ],
+    "diff_sha256": "70615ff528f2b185634745be1aad7feee32742236daf26c0c3b52d6c3333d511",
+    "binary_sha256": "5feb0941a3bee791f8b6e1edaca1f93fca824d4b382ca21bc436a3407e5e86bf",
+    "os": {
+      "NAME": "Ubuntu",
+      "ID": "ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "VERSION_ID": "26.04",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "resolute",
+      "LOGO": "ubuntu-logo"
+    },
+    "kernel": "7.0.0-38-generic",
+    "architecture": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+    "logical_cpus": 24,
+    "memory": "MemTotal:       32024312 kB",
+    "versions": {
+      "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+      "cargo": "cargo 1.90.0 (840b83a10 2025-07-30)",
+      "node": "v22.22.1",
+      "npm": "9.2.0",
+      "webkitgtk": "2.52.6",
+      "python": "Python 3.14.4"
+    },
+    "frontend_packages": {
+      "@tauri-apps/cli": "2.12.2",
+      "@tauri-apps/api": "2.12.3",
+      "@xterm/xterm": "6.0.0",
+      "svelte": "5.57.2",
+      "vite": "8.3.4"
+    },
+    "build": "direct release executable, opt-in VITE_EROS_BENCHMARK=1; not installed package",
+    "configuration": {
+      "binary": "<repo>/target/release/eros-desktop",
+      "output": "docs/planning/deliveries/EROS-002-results/round-1.json",
+      "compare": null,
+      "workloads": "W0,W1,W2,W3",
+      "idle_seconds": 90,
+      "pressure_seconds": 60,
+      "cycles": 100,
+      "cold_samples": 10,
+      "warm_samples": 20
+    },
+    "clock_offset_ms_before": 1792007360986.0137,
+    "source_sha256": {
+      "scripts/performance/run.py": "c71a6a39b6ee36b73a2de3ed12acda7900c360dbbd85bfc8097a566e9cdf3835",
+      "scripts/performance/test_performance.py": "8080ce2809445f9b77ec9640eb9635392a74040a208b08c8d195f2113511dd96",
+      "scripts/performance/fixture.py": "319bcf81110b6fc3589bcf03f1f68c4341f1ff7c4a61ff51aa5313a7ff1fd82a",
+      "scripts/performance/metrics.py": "665b8aa1a293fbd89047a9c22f00f777fe6efa2aa7bdf075a1ffd8b86922bd3e",
+      "scripts/performance/failures.py": "7111feb3d2a82996940adb7445c72d3dc0773b07b732a54f144e49f2c8d155b4",
+      "scripts/performance/producer.py": "4aae50ec51073ac700c834b72d9d6c241631c2ebdb8ea1f9547388c283e589bb",
+      "apps/desktop/src/lib/benchmark.ts": "560ca16f18ae0de969ca4e361239bf788ff23f6a064bd60fd52870e35366fac1",
+      "apps/desktop/src/App.svelte": "5ea4b6faee7a046eaeb7d782a6d4d3c6a3f3ed96f3cc30684ede4c4bdfc51dd0",
+      "apps/desktop/src/lib/TerminalPane.svelte": "4b70652a4fae42c656f2733cb8be66aeedede92ecb6ddf70d6da275e4b327610",
+      "apps/desktop/src/main.ts": "42e03123ef455c9b7f23fcb9de91c4f5427a07f10f857db32a125c146d92ec63",
+      "apps/desktop/src-tauri/src/lib.rs": "3b24d74112c1f3d5368da38521b5879d69c20cf820fdd55cf9306bd53dc5e8bb"
+    },
+    "clock_offset_ms_after": 1792007360986.013
+  },
+  "workloads": [
+    {
+      "scenario": "W0",
+      "status": "blocked",
+      "error": "Isolated service exited (1); Unix socket/PTY permissions required",
+      "duration_s": 0.020957119995728135,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 1
+      }
+    },
+    {
+      "scenario": "W1",
+      "status": "blocked",
+      "error": "Isolated service exited (1); Unix socket/PTY permissions required",
+      "duration_s": 0.021048591996077448,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 1
+      }
+    },
+    {
+      "scenario": "W2",
+      "status": "blocked",
+      "error": "Isolated service exited (1); Unix socket/PTY permissions required",
+      "duration_s": 0.02100707098725252,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 1
+      }
+    },
+    {
+      "scenario": "W3",
+      "status": "blocked",
+      "error": "Isolated service exited (1); Unix socket/PTY permissions required",
+      "duration_s": 0.021046572001068853,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 1
+      }
+    }
+  ],
+  "status": "incomplete",
+  "monitorCalibration": {
+    "duration_s": 5.004684721992817,
+    "sampling_cpu_s": 0.0040426619999999955,
+    "sampling_wall_s": 0.004059521990711801,
+    "samples": [
+      {
+        "at_monotonic_s": 79897.457656917,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": null,
+            "pss_kib": 14179,
+            "rss_kib": 24912,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 79898.458522952,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.999134714368152,
+            "pss_kib": 14203,
+            "rss_kib": 24912,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 79899.459433932,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 14203,
+            "rss_kib": 24912,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 79900.460421608,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 14203,
+            "rss_kib": 24912,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 79901.461340225,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 14207,
+            "rss_kib": 24916,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      }
+    ]
+  },
+  "summary": {
+    "W0.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    }
+  },
+  "artifact_sanitization": "Repository/home path prefixes masked for transfer; measurements, source hashes and binary hashes unchanged."
+}

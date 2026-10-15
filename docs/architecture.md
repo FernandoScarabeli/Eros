@@ -14,8 +14,9 @@ implementation and performance guidance below are not release claims.
 | Terminal rendering | xterm.js connected to real PTYs |
 
 Python and tmux were prototype tools; neither is selected as an application runtime.
-The current source pins direct dependencies. Lockfiles and the supported Ubuntu
-release still need to be recorded in a build-capable environment.
+Application dependencies are resolved by committed Cargo and npm lockfiles.
+The development/CI target is Ubuntu 24.04 LTS, Rust 1.90.0 and Node 22.22.1; see
+[development.md](development.md). Native acceptance remains separate.
 
 ## Process ownership
 

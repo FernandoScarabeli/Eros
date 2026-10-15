@@ -80,7 +80,7 @@
 </script>
 
 <div class="home-content">
-  <FaultyTerminal />
+  {#if window.__EROS_BENCHMARK__?.animations !== 'off'}<FaultyTerminal />{/if}
   <section class="welcome" aria-labelledby="welcome-title">
     <div class="welcome-copy">
       <h1 id="welcome-title">O que vamos construir hoje?</h1>

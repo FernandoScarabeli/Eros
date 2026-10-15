@@ -1,0 +1,2350 @@
+{
+  "schema_version": 2,
+  "environment": {
+    "commit": "8cdb0172a2962e173fd367740e05d38f6a2f9cbc",
+    "changes": [
+      "M .github/workflows/repository.yml",
+      " M AGENTS.md",
+      " M CONTRIBUTING.md",
+      " M README.md",
+      " M README.pt-BR.md",
+      " M ROADMAP.md",
+      " M apps/desktop/package-lock.json",
+      " M apps/desktop/package.json",
+      " M apps/desktop/src-tauri/src/lib.rs",
+      " M apps/desktop/src/App.svelte",
+      " M apps/desktop/src/lib/HomeScreen.svelte",
+      " M apps/desktop/src/lib/TerminalPane.svelte",
+      " M apps/desktop/src/lib/TextType.svelte",
+      " M apps/desktop/src/main.ts",
+      " M docs/architecture.md",
+      " M docs/frontend-verification.md",
+      "?? .nvmrc",
+      "?? apps/desktop/.npmrc",
+      "?? apps/desktop/scripts/benchmark-probe.test.mjs",
+      "?? apps/desktop/src/lib/benchmark-probe.ts",
+      "?? apps/desktop/src/lib/benchmark.ts",
+      "?? docs/development.md",
+      "?? docs/planning/",
+      "?? scripts/performance/"
+    ],
+    "diff_sha256": "727fc0d941fc2b108d9020f1b61d3dc1b9b8afc7aadb0f2627443c257600c546",
+    "binary_sha256": "d24df1980cc38580f2e83486ed014a10a2fac283e263e056d54d04b41d7307d1",
+    "os": {
+      "NAME": "Ubuntu",
+      "ID": "ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "VERSION_ID": "26.04",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "resolute",
+      "LOGO": "ubuntu-logo"
+    },
+    "kernel": "7.0.0-38-generic",
+    "architecture": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) Ultra 9 285K",
+    "logical_cpus": 24,
+    "memory": "MemTotal:       32024312 kB",
+    "versions": {
+      "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+      "cargo": "cargo 1.90.0 (840b83a10 2025-07-30)",
+      "node": "v22.22.1",
+      "npm": "9.2.0",
+      "webkitgtk": "2.52.6",
+      "python": "Python 3.14.4"
+    },
+    "frontend_packages": {
+      "@tauri-apps/cli": "2.12.2",
+      "@tauri-apps/api": "2.12.3",
+      "@xterm/xterm": "6.0.0",
+      "svelte": "5.57.2",
+      "vite": "8.3.4"
+    },
+    "build": "direct release executable, opt-in VITE_EROS_BENCHMARK=1; not installed package",
+    "configuration": {
+      "binary": "<repo>/target/release/eros-desktop",
+      "output": "docs/planning/deliveries/EROS-002-results/revision2-triage-sandbox.json",
+      "compare": null,
+      "workloads": "W0,W1,W2,W3",
+      "idle_seconds": 5,
+      "pressure_seconds": 1,
+      "cycles": 1,
+      "cold_samples": 1,
+      "warm_samples": 1
+    },
+    "clock_offset_ms_before": 1792007360986.0137,
+    "source_sha256": {
+      "scripts/performance/clocks.py": "fe57f1811f476ba78cb6aad73271966960cfb60090094fe808223677e065e71a",
+      "scripts/performance/run.py": "b2b8d2eb0f58d59372742c542303750d591a689fc2954648ca7af691396ecddf",
+      "scripts/performance/test_performance.py": "f146f45727da06408c5bce71af430ad3c7b63bfcf59c75c0402c73942cbcc5e0",
+      "scripts/performance/fixture.py": "4343c6390925046a493b06d05005b7a64fc50865fc76fba5029e8e126974eb9b",
+      "scripts/performance/test_revision.py": "3778fa35c61eeb100010288e686e8cfe0167a89718c40da7dc4d204122156485",
+      "scripts/performance/metrics.py": "8f52d325682adfd0f790026d5e3e0ad22283abab05e39cec9b7f26bb1ceabfba",
+      "scripts/performance/failures.py": "7111feb3d2a82996940adb7445c72d3dc0773b07b732a54f144e49f2c8d155b4",
+      "scripts/performance/producer.py": "ea8366510e3e4c3d8ef5758587de5500f939167b7fd28136762e238391aaa1c9",
+      "apps/desktop/src/lib/benchmark.ts": "b204bf37fae6a1f46b42acef040f29779dfbf08ade51f2acaf10d8cacb5d00a6",
+      "apps/desktop/src/lib/benchmark-probe.ts": "dc703a5e3f91f682895b114370b03274f9239d8fb368c52a216932f850371ca9",
+      "apps/desktop/src/lib/HomeScreen.svelte": "7891c6540b9c047e7a438bf43378ee10e8a995f28aad13f9f41f79ebb005966b",
+      "apps/desktop/src/lib/TextType.svelte": "cc14ee1cd2c94ac11b38c124f8ea4648d425e8c42fbb90918e9b4eb6ffb50299",
+      "apps/desktop/src/App.svelte": "5ea4b6faee7a046eaeb7d782a6d4d3c6a3f3ed96f3cc30684ede4c4bdfc51dd0",
+      "apps/desktop/src/lib/TerminalPane.svelte": "8f823dc33bef78a8bccacd6adec2204e1e70f8e8d4c9eb4eb920fe5eb4bc5437",
+      "apps/desktop/src/main.ts": "42e03123ef455c9b7f23fcb9de91c4f5427a07f10f857db32a125c146d92ec63",
+      "apps/desktop/src-tauri/src/lib.rs": "478dade6e671acf8c76c5905596d580adbdc328a3b4b5fd0bdec6987dd7be07b"
+    },
+    "clock_offset_ms_after": 1792007360986.014
+  },
+  "workloads": [
+    {
+      "scenario": "W0",
+      "workload": "W0",
+      "terminals": 1,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 0.0002146749902749434,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W0.empty-terminal",
+      "workload": "W0",
+      "terminals": 1,
+      "idle_mode": "empty-terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.806300709489733e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W0.home-off",
+      "workload": "W0",
+      "terminals": 1,
+      "idle_mode": "home-off",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.426300726365298e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W0.home-on",
+      "workload": "W0",
+      "terminals": 1,
+      "idle_mode": "home-on",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.759299478493631e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W0.minimized",
+      "workload": "W0",
+      "terminals": 1,
+      "idle_mode": "minimized",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.965299300849438e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W1.1",
+      "workload": "W1",
+      "terminals": 1,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.41179974284023e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W1.8",
+      "workload": "W1",
+      "terminals": 8,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.864300278015435e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W1.chat-switch",
+      "workload": "chat-switch",
+      "terminals": 8,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.830900722183287e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W2.1",
+      "workload": "W2",
+      "terminals": 1,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.517699850723147e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W2.8",
+      "workload": "W2",
+      "terminals": 8,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.620900578331202e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    },
+    {
+      "scenario": "W3",
+      "workload": "W3",
+      "terminals": 1,
+      "idle_mode": "terminal",
+      "status": "unavailable",
+      "classification": "environment_unavailable",
+      "error": "Unix socket bind denied: errno 1",
+      "ui": {},
+      "clock": {
+        "samples": [],
+        "tolerance_ms": 5,
+        "comparison_valid": null
+      },
+      "derived": {
+        "idle_cpu_percent_one_core_mean": null,
+        "idle_samples_after_30s": 0,
+        "peak_app_pss_kib": null,
+        "view_cycles_growth": {
+          "pss_kib": null,
+          "fds": null,
+          "threads": null
+        },
+        "background_cpu": null,
+        "rust_subscriptions": null,
+        "catalog_service_only_pss": {
+          "base_kib": null,
+          "large_kib": null,
+          "delta_kib": null,
+          "scope": "service-only; UI-inclusive catalog goal remains unmeasured if snapshot fails"
+        }
+      },
+      "producerStates": [],
+      "duration_s": 7.73049978306517e-05,
+      "samples": [],
+      "samplingOverhead": {
+        "cpu_s": 0,
+        "wall_s": 0,
+        "calls": 0,
+        "cpu_percent_one_core": 0.0
+      },
+      "cleanup": {
+        "live_survivors": 0,
+        "owned_processes": 0
+      }
+    }
+  ],
+  "status": "incomplete",
+  "monitorCalibration": {
+    "duration_s": 5.004390472007799,
+    "sampling_cpu_s": 0.0037103179999999902,
+    "sampling_wall_s": 0.0037266470171744004,
+    "samples": [
+      {
+        "at_monotonic_s": 84061.842089744,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": null,
+            "pss_kib": 14257,
+            "rss_kib": 25608,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 84062.84295337,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 14232,
+            "rss_kib": 25608,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 84063.843963137,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 13991,
+            "rss_kib": 25608,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 84064.84478659,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 13991,
+            "rss_kib": 25608,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      },
+      {
+        "at_monotonic_s": 84065.845646498,
+        "phase": "sampler-calibration-no-application",
+        "groups": {
+          "service": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "ui_webkit": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "controlled": {
+            "processes": 0,
+            "cpu_percent": null,
+            "pss_kib": null,
+            "rss_kib": null,
+            "fds": null,
+            "threads": null
+          },
+          "monitor": {
+            "processes": 1,
+            "cpu_percent": 0.0,
+            "pss_kib": 13991,
+            "rss_kib": 25608,
+            "fds": 5,
+            "threads": 1
+          }
+        }
+      }
+    ]
+  },
+  "summary": {
+    "W0.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.empty-terminal.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-off.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.home-on.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W0.minimized.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.1.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.8.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W1.chat-switch.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.1.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W2.8.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.service.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.ui_webkit.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.controlled.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.cpu_percent": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.pss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.rss_kib": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.fds": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    },
+    "W3.monitor.threads": {
+      "n": 0,
+      "min": null,
+      "median": null,
+      "p95": null,
+      "max": null
+    }
+  },
+  "artifact_sanitization": "Repository/home path prefixes masked for transfer; measurements, source hashes and binary hashes unchanged."
+}

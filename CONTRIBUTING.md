@@ -1,6 +1,6 @@
 # Contributing
 
-Eros is at the specification and repository-foundation stage. Please read the
+Eros has an initial Rust/Tauri and Svelte implementation, pending native acceptance. Please read the
 [product specification](docs/product.md), [architecture](docs/architecture.md)
 and [roadmap](ROADMAP.md) before proposing implementation work.
 
@@ -21,17 +21,13 @@ must work from a clean clone without that directory or private machine paths.
 - Include visual evidence for UI changes and reproduction steps for bugs.
 - Use English for source code and primary contributor documentation; preserve the
   Portuguese introduction and keep its product claims consistent with the English one.
-- Commit application lockfiles when the corresponding workspaces are created.
+- Preserve Cargo.lock and apps/desktop/package-lock.json; use locked installs.
 
-The repository does not yet contain application build scripts. The available
-foundation check requires Git and Python 3:
-
-```bash
-python3 scripts/check_repository.py
-```
-
-Document additional build/test commands alongside the first implementation.
-Do not add passing CI jobs for commands or functionality that do not exist.
+Follow [development and verification](docs/development.md) for supported versions,
+Ubuntu packages, development, builds and controlled checks. CI runs foundation,
+Rust tests, generated contracts, frontend checks/build and controlled smokes.
+CI configuration is not evidence of a successful hosted run. Formatting and
+Clippy are not established gates in EROS-001; do not claim they pass.
 
 ## Provider-backed verification
 
