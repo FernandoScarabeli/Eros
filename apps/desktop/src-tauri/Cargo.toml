@@ -1,0 +1,22 @@
+[package]
+name = "eros-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "eros_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "=2.7.2", features = [] }
+
+[dependencies]
+eros-core = { path = "../../../crates/eros-core" }
+eros-service = { path = "../../../crates/eros-service" }
+serde.workspace = true
+serde_json.workspace = true
+libc.workspace = true
+tauri = { version = "=2.12.3", features = [] }
+tauri-plugin-dialog = "=2.8.2"

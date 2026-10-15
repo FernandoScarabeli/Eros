@@ -1,0 +1,47 @@
+# Local archives: never part of the new project or its build.
+/legado/
+
+# Local assistant/cloud configuration and credentials.
+/.agents/
+/.codex/
+/.aws/
+/.impeccable/
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+auth.json
+
+# Rust, frontend and tooling outputs.
+target/
+node_modules/
+dist/
+.svelte-kit/
+.vite/
+coverage/
+.deps/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+*.tsbuildinfo
+apps/desktop/src-tauri/gen/
+
+# Local runtime data and experiments.
+.runtime/
+.data/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Editor/OS files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*~

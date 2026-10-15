@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Permissões essenciais da janela principal do Eros.",
+  "windows": ["main"],
+  "permissions": ["core:default", "dialog:allow-open"]
+}

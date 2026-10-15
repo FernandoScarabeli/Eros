@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible problem in implemented behavior.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please check project status first. For sensitive security reports, follow SECURITY.md."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: What should happen, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal example without credentials or private files.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Ubuntu version, display session and relevant Codex version.
+    validations:
+      required: true
